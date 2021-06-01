@@ -1,38 +1,50 @@
-// создал переменную
-const num = 266219;
-console.log(num);
+ 'use strict'
+let weakRu, weakEn, lang;
 
-let str = num.toString();
-console.log(str);
+// создаем массивы с днями недели
 
-const arr = (str.split(''));
-console.log(arr);
+weakRu = ['понедельник', 'вторник', 'среда','четверг','пятница','суббота','воскресенье'];
+weakEn = ['monday', 'tuesday', 'wednesday','thursday','friday','saturday','sunday'];
 
-// попробовал перемножить способом ручного перебора
+// запрашиваем выбор языка
 
-let amountHead;
-amountHead = (arr[0]*arr[1]*arr[2]*arr[3]*arr[4]*arr[5]);
-console.log(amountHead);
+lang = prompt('Введите язык (ru, en)');
 
-// сделал цикл для перемножения
+// выбод массива 1 вариант
 
-let amount;
-let figure = 1;
-for (let i = 0; i < arr.length; i++ ) {
-  figure = arr[i] * figure;
-  console.log(figure);
+if (lang === 'ru') {
+    console.log(weakRu);
+} else if (lang === 'en') {
+  console.log(weakEn);
+} else {
+  console.log('Некорректный ввод');
 }
-amount = figure;
-console.log(amount);
- 
-// полученный результат возводим в стенень 3
 
-let degree;
-degree = amount ** 3;
-console.log(degree);
+// выбод массива 2 вариант
 
-// выводим первые две цифры полученного числа в консоль
+switch (lang) {
+  case 'ru':
+    console.log(weakRu);
+    break;
+  case 'en':
+    console.log(weakEn);
+    break;
+  default:
+    console.log('Некорректный ввод');
+}
 
-let conclusion;
-conclusion = degree.toString();
-console.log(conclusion.substr(0, 2));
+// вывод массива 3 вариант 
+
+let langType = {
+  'ru': ['понедельник', 'вторник', 'среда','четверг','пятница','суббота','воскресенье'],
+  'en': ['monday', 'tuesday', 'wednesday','thursday','friday','saturday','sunday']
+}; 
+
+console.log(langType[lang]);
+
+// вторая задача
+
+let namePerson = 'Артем';
+
+let result = namePerson === 'Артем' ? console.log('директор') : 
+namePerson === 'Максим' ? console.log('преподаватель') : console.log('студент');
